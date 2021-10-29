@@ -54,8 +54,10 @@ const useStyles = makeStyles((theme) => ({
     width: drawerWidth,
     flexShrink: 0,
     whiteSpace: "nowrap",
+    background: "#112233",
   },
   drawerOpen: {
+    background: "#112233",
     width: drawerWidth,
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
@@ -63,6 +65,7 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   drawerClose: {
+    background: "#112233",
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -112,7 +115,10 @@ export default function MiniDrawer() {
   };
 
   return (
-    <div className={classes.root}>
+    <div
+      className={classes.root}
+      style={{ background: "#112233", color: "#ffff" }}
+    >
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -151,6 +157,7 @@ export default function MiniDrawer() {
         </Toolbar>
       </AppBar>
       <Drawer
+        // style={{ background: "#112233", color: "#ffff" }}
         variant="permanent"
         className={clsx(classes.drawer, {
           [classes.drawerOpen]: open,
@@ -197,7 +204,9 @@ export default function MiniDrawer() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <PrismCode />
+        <div>
+          <PrismCode />
+        </div>
       </main>
     </div>
   );
